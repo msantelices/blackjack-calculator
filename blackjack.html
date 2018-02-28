@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="Calcula la mejor opción para un mano de blackjack de acuerdo con la estrategia básica del juego.">
+	<title>Blackjack calculator | Mauricio Santelices</title>
+	<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Estilos -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-expand-sm navbar-light">
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		
+  		<a class="navbar-brand" href="https://www.msantelices.com/blackjack">Blackjack</a>
+
+  		<div class="collapse navbar-collapse" id="navbarToggler">
+    		<ul class="navbar-nav mt-2 mt-lg-0">
+      			<li class="nav-item">
+        			<a class="nav-link" href="https://www.msantelices.com">Portafolio <span class="sr-only">(current)</span></a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Github</a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+</header>
+
+<h2 class="descripcion">Determina la mejor jugada para una mano de blackjack</h2>
+<!-- Calculadora -->
+<div class="container">
+<div class="row">
+	<!-- Crupier -->
+	<div class="col-sm-12">
+		<h2>Carta del crupier:</h2>
+
+		<!-- Inputs del crupier -->
+		<ul>
+			<li>
+				<input type="radio" name="crupier" value="2" id="cruOne">
+				<label for="cruOne" class="cardInput">2</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="3" id="cruTwo">
+				<label for="cruTwo" class="cardInput">3</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="4" id="cruThree">
+				<label for="cruThree" class="cardInput">4</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="5" id="cruFour">
+				<label for="cruFour" class="cardInput">5</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="6" id="cruFive">
+				<label for="cruFive" class="cardInput">6</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="7" id="cruSix">
+				<label for="cruSix" class="cardInput">7</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="8" id="cruSeven">
+				<label for="cruSeven" class="cardInput">8</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="9" id="cruEight">
+				<label for="cruEight" class="cardInput">9</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="10" id="cruNine">
+				<label for="cruNine" class="cardInput">10</label>
+			</li>
+			<li>
+				<input type="radio" name="crupier" value="A" id="cruTen">
+				<label for="cruTen" class="cardInput">A</label>
+			</li>
+		</ul>
+		<hr>
+	</div><!-- cols -->
+
+
+	<!-- Jugador -->
+	<div class="col-sm-12">
+		<h2>Mano del jugador:</h2>
+
+	<!-- Manos duras -->
+	<p>Manos duras:</p>
+	<ul>
+		<li>
+		<input type="radio" name="player" value="8" id="plaOne">
+		<label class="cardInput" for="plaOne">5-8</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="9" id="plaTwo">
+		<label class="cardInput" for="plaTwo">9</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="10" id="plaThree">
+		<label class="cardInput" for="plaThree">10</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="11" id="plaFour">
+		<label class="cardInput" for="plaFour">11</label>
+		</li>
+		<li><input type="radio" name="player" value="12" id="plaFive"><label class="cardInput" for="plaFive">12</label></li>
+		<li>
+		<input type="radio" name="player" value="13" id="plaSix">
+		<label class="cardInput" for="plaSix">13</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="14" id="plaSeven">
+		<label class="cardInput" for="plaSeven">14</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="15" id="plaEight">
+		<label class="cardInput" for="plaEight">15</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="16" id="plaNine">
+		<label class="cardInput" for="plaNine">16</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="17" id="plaTen">
+		<label class="cardInput" for="plaTen">17-20</label>
+		</li>
+		<hr>
+	</ul>
+
+
+	<p>Manos blandas:</p>
+	<ul>
+		<li>
+		<input type="radio" name="player" value="A2" id="sofOne">
+		<label class="cardInput" for="sofOne">A,2</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A3" id="sofTwo">
+		<label class="cardInput" for="sofTwo">A,3</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A4" id="sofThree">
+		<label class="cardInput" for="sofThree">A,4</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A5" id="sofFour">
+		<label class="cardInput" for="sofFour">A,5</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A6" id="sofFive">
+		<label class="cardInput" for="sofFive">A,6</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A7" id="sofSix">
+		<label class="cardInput" for="sofSix">A,7</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A8" id="sofSeven">
+		<label class="cardInput" for="sofSeven">A,8</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="A9" id="sofEight">
+		<label class="cardInput" for="sofEight">A,9</label>
+		</li>
+		<hr>
+	</ul>
+
+
+	<p>Pares:</p>
+	<ul>
+		<li>
+		<input type="radio" name="player" value="22" id="paiOne">
+		<label class="cardInput" for="paiOne">2,2</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="33" id="paiTwo">
+		<label class="cardInput" for="paiTwo">3,3</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="44" id="paiThree">
+		<label class="cardInput" for="paiThree">4,4</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="55" id="paiFour">
+		<label class="cardInput" for="paiFour">5,5</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="66" id="paiFive">
+		<label class="cardInput" for="paiFive">6,6</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="77" id="paiSix">
+		<label class="cardInput" for="paiSix">7,7</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="88" id="paiSeven">
+		<label class="cardInput" for="paiSeven">8,8</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="99" id="paiEight">
+		<label class="cardInput" for="paiEight">9,9</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="1010" id="paiNine">
+		<label class="cardInput" for="paiNine">10,10</label>
+		</li>
+		<li>
+		<input type="radio" name="player" value="AA" id="paiTen">
+		<label class="cardInput" for="paiTen">A,A</label>
+		</li>
+		<hr>
+	</ul>
+	</div><!-- cols -->
+
+</div><!-- row -->
+
+<!-- Calcular -->
+	<div class="boton">
+		<p class="mensaje">*Nunca pedir seguro</p>
+
+		<input type="submit" id="submit" value="Consultar" onclick="blackJackResult()">
+		<input type="submit" id="reset" value="Reiniciar" onclick="blackJackReset()">
+		<div id="resultado"></div>
+	</div>
+
+</div><!-- container -->
+
+<footer>
+	<p>Calculadora BlackJack | <a href="https://www.msantelices.com">Mauricio Santelices</a></p>
+</footer>
+
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>

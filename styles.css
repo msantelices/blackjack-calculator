@@ -1,0 +1,140 @@
+/* Menu */
+.navbar {
+	background: #fff;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+	color: #B40404!important;
+	font-weight: bold;
+	margin-left: 5%;
+	text-transform: uppercase;
+}
+
+.navbar-nav {
+	margin-right: 5%;
+	margin-left: auto;
+	text-transform: uppercase;
+}
+
+.navbar-nav li a:hover {
+	color: #B40404!important;
+}
+
+.descripcion {
+	font-size: 22px;
+	margin-bottom: 3em;
+	padding: 0 20px;
+	text-align: center;
+}
+
+/* Calculadora */
+.container {
+	padding: 20px;
+}
+
+h2 {
+	font-size: 20px;
+	margin: 1em 0;
+	text-transform: uppercase;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	margin-left: 25%;
+	padding: 0;
+}
+
+ul li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.cardInput {
+	color: #1c1c1c;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+input[type=radio]:checked + .cardInput {
+	border-bottom: 2px solid #B40404;
+	color: #B40404;
+	margin-bottom: -1px;
+	transition: all 0.3s ease;
+}
+
+.mensaje {
+	font-weight: bold;
+	margin: 2em 0;
+	text-transform: uppercase;
+}
+
+input[type=submit] {
+	background: #B40404;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	margin-bottom: 3em;
+	padding: 10px 15px;
+	text-transform: uppercase;
+}
+
+input[type=submit]:focus {
+	outline: none;
+}
+
+input[type=submit]:active {
+	background: #1c1c1c;
+}
+
+
+#resultado {
+	border: none;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+
+/* Footer */
+footer {
+	margin-top: 3em;
+}
+
+footer p {
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	padding-top: 1em;
+	text-align: center;
+}
+
+footer p a {
+	color: #B40404;
+	font-weight: bold;
+}
+
+footer p a:hover {
+	color: #1c1c1c;
+	text-decoration: none;
+}
+
+
+/* Mediaqueries */
+@media screen and (max-width: 576px) {
+	ul {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	#resultado {
+		text-align: center;
+	}
+}
